@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: telegram-taxi-api
+    runtime: node
+    plan: free
+    rootDir: .
+    buildCommand: npm install
+    startCommand: npm --workspace @taxi/api run start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 24.15.0
+      - key: PORT
+        value: 10000
+      - key: ADMIN_TELEGRAM_IDS
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: MINI_APP_URL
+        sync: false
+      - key: POSTGRES_URL
+        sync: false
+      - key: REDIS_URL
+        sync: false
+      - key: YANDEX_MAPS_API_KEY
+        sync: false

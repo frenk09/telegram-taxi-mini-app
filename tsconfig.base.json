@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@taxi/shared": [
+        "packages/shared/src/index.ts"
+      ],
+      "@taxi/shared/*": [
+        "packages/shared/src/*"
+      ]
+    }
+  }
+}

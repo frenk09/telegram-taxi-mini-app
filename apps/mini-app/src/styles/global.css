@@ -1,0 +1,404 @@
+:root {
+  color-scheme: light;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #102124;
+  background:
+    radial-gradient(circle at top left, rgba(255, 188, 114, 0.55), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(47, 188, 180, 0.26), transparent 28%),
+    linear-gradient(180deg, #fff8ec 0%, #f6f2ea 54%, #eff6f4 100%);
+  --surface: rgba(255, 255, 255, 0.72);
+  --surface-strong: rgba(255, 255, 255, 0.92);
+  --text-main: #102124;
+  --text-muted: #5b6769;
+  --accent: #ff7a1a;
+  --accent-dark: #cf5f0d;
+  --teal: #0b8b88;
+  --danger: #c94b52;
+  --border: rgba(16, 33, 36, 0.1);
+  --shadow: 0 20px 60px rgba(28, 41, 53, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: var(--text-main);
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+}
+
+.app-shell__backdrop {
+  position: absolute;
+  inset: 18px;
+  z-index: -1;
+  border-radius: 36px;
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.2)),
+    linear-gradient(45deg, rgba(255, 122, 26, 0.08), rgba(11, 139, 136, 0.08));
+  backdrop-filter: blur(14px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 24px;
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.hero__eyebrow,
+.section-card__eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.hero h1 {
+  margin: 0;
+  max-width: 13ch;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+  font-size: clamp(2.3rem, 4vw, 4.4rem);
+  line-height: 0.98;
+}
+
+.hero__lead {
+  max-width: 56ch;
+  margin: 16px 0 0;
+  color: var(--text-muted);
+}
+
+.hero__summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.hero__summary span {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border);
+}
+
+.role-tabs {
+  display: inline-grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin: 24px 0;
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--border);
+}
+
+.role-tabs__button {
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--text-main);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.role-tabs__button:hover {
+  transform: translateY(-1px);
+}
+
+.role-tabs__button--active {
+  background: #102124;
+  color: white;
+}
+
+.panel-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.section-card {
+  padding: 24px;
+  border-radius: 28px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.section-card__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.section-card h2,
+.ride-card h3,
+.moderation-card h3 {
+  margin: 0;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+.section-card h2 {
+  font-size: 1.55rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.form-grid__wide {
+  grid-column: 1 / -1;
+}
+
+.form-grid label {
+  display: grid;
+  gap: 8px;
+  color: var(--text-muted);
+}
+
+.form-grid input,
+.form-grid textarea,
+.form-grid select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(16, 33, 36, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.map-preview {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  margin: 18px 0;
+  border-radius: 22px;
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(16, 33, 36, 0.95), rgba(11, 139, 136, 0.92)),
+    radial-gradient(circle at top right, rgba(255, 122, 26, 0.25), transparent 30%);
+}
+
+.map-preview p {
+  margin: 8px 0 0;
+  max-width: 46ch;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.map-preview__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: start;
+}
+
+.map-preview__stats span,
+.price-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.price-badge {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), #ff954a);
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button {
+  padding: 12px 16px;
+  border-radius: 14px;
+  font-weight: 700;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.ghost-button:hover {
+  transform: translateY(-1px);
+}
+
+.primary-button {
+  color: white;
+  background: linear-gradient(135deg, var(--accent), #ff9445);
+}
+
+.secondary-button {
+  color: white;
+  background: linear-gradient(135deg, #102124, #304145);
+}
+
+.ghost-button {
+  color: var(--danger);
+  background: rgba(201, 75, 82, 0.08);
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.ghost-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.list {
+  display: grid;
+  gap: 14px;
+}
+
+.ride-card,
+.moderation-card {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border-radius: 22px;
+  background: var(--surface-strong);
+  border: 1px solid rgba(16, 33, 36, 0.08);
+}
+
+.ride-card--driver {
+  background:
+    linear-gradient(135deg, rgba(255, 122, 26, 0.08), rgba(255, 255, 255, 0.98));
+}
+
+.ride-card__top,
+.ride-card__actions,
+.profile-strip,
+.moderation-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ride-card p,
+.moderation-card p {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+}
+
+.ride-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ride-meta span {
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(16, 33, 36, 0.05);
+  color: var(--text-muted);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.status-pill--searching_driver {
+  color: #6d4a00;
+  background: rgba(255, 194, 82, 0.25);
+}
+
+.status-pill--driver_assigned,
+.status-pill--driver_on_the_way,
+.status-pill--driver_arrived,
+.status-pill--trip_started {
+  color: #035c62;
+  background: rgba(11, 139, 136, 0.16);
+}
+
+.status-pill--trip_completed {
+  color: #0f5132;
+  background: rgba(25, 135, 84, 0.14);
+}
+
+.status-pill--cancelled_by_client,
+.status-pill--cancelled_by_driver,
+.status-pill--cancelled_by_admin {
+  color: #842029;
+  background: rgba(220, 53, 69, 0.12);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stats-grid article {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(16, 33, 36, 0.08);
+}
+
+.stats-grid strong {
+  font-size: 2rem;
+  font-family: "Space Grotesk", "Segoe UI", sans-serif;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ride-card__top,
+  .ride-card__actions,
+  .profile-strip,
+  .moderation-card,
+  .map-preview {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
